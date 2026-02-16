@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape Room Campaign</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <h1>Escape Room Campaign</h1>
+        <p>Every room has chained interactions. Unlock all locks to progress.</p>
+        <p id="level-name" class="level-name"></p>
+      </header>
+
+      <section class="top-panel">
+        <div id="status" class="status"></div>
+        <div class="inventory-panel">
+          <h2>Inventory</h2>
+          <div id="inventory" class="inventory"></div>
+          <button id="hint-btn" class="hint-btn">Get Hint</button>
+          <button id="clear-selection" class="clear-btn">Clear Selection</button>
+        </div>
+      </section>
+
+      <section id="room" class="room theme-workshop" aria-label="Escape room scene">
+        <button id="door" class="object target" data-target="door">Door</button>
+        <button id="scanner" class="object target" data-target="scanner">Scanner</button>
+        <button id="keypad" class="object target" data-target="keypad">Keypad</button>
+        <button id="console" class="object target" data-target="console">Console</button>
+        <button id="panel" class="object target" data-target="panel">Panel</button>
+        <button id="vent" class="object target" data-target="vent">Vent</button>
+        <button id="breakable" class="object target" data-target="breakable">Crate</button>
+        <button id="chest" class="object target" data-target="chest">Locker</button>
+
+        <button id="pickup-tool" class="object pickup" data-item="tool">Tool</button>
+        <button id="pickup-magnet" class="object pickup" data-item="magnet">Magnet</button>
+        <button id="pickup-battery" class="object pickup" data-item="battery">Battery</button>
+
+        <button id="pickup-boxKey" class="object pickup hidden" data-item="boxKey">Box Key</button>
+        <button id="pickup-screwdriver" class="object pickup hidden" data-item="screwdriver">Screwdriver</button>
+        <button id="pickup-wire" class="object pickup hidden" data-item="wire">Wire</button>
+        <button id="pickup-fuse" class="object pickup hidden" data-item="fuse">Fuse</button>
+        <button id="pickup-doorKey" class="object pickup hidden" data-item="doorKey">Door Key</button>
+        <button id="pickup-accessCard" class="object pickup hidden" data-item="accessCard">Access Card</button>
+        <button id="pickup-clueA" class="object pickup hidden" data-item="clueA">Clue A</button>
+        <button id="pickup-clueB" class="object pickup hidden" data-item="clueB">Clue B</button>
+        <button id="pickup-clueC" class="object pickup hidden" data-item="clueC">Clue C</button>
+      </section>
+
+      <section class="log-panel">
+        <h2>Game Log</h2>
+        <ul id="log"></ul>
+      </section>
+    </main>
+
+    <div id="paper-overlay" class="paper-overlay hidden" aria-hidden="true">
+      <div class="paper-backdrop" data-close-paper="true"></div>
+      <article class="paper-modal" role="dialog" aria-modal="true" aria-labelledby="paper-title">
+        <button id="paper-close" class="paper-close" type="button" aria-label="Close paper">
+          Close
+        </button>
+        <h2 id="paper-title">Paper</h2>
+        <p id="paper-body"></p>
+      </article>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
